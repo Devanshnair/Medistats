@@ -1,0 +1,173 @@
+.medicard {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tags {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .best {
+    background-color: #e3f2fd;
+    color: #1565c0;
+  }
+  
+  .cheapest {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .content {
+    display: flex;
+    padding: 16px;
+  }
+  
+  .leftContent {
+    flex: 1;
+    display: flex;
+  }
+  
+  .imageContainer {
+    flex: 0 0 100px;
+    margin-right: 16px;
+  }
+  
+  .image {
+    object-fit: contain;
+  }
+  
+  .details {
+    flex: 1;
+  }
+  
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .manufacturer,
+  .packageSize {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 4px;
+  }
+  
+  .pricing {
+    margin-top: 8px;
+  }
+  
+  .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-right: 8px;
+  }
+  
+  .mrp {
+    font-size: 14px;
+    color: #666;
+    text-decoration: line-through;
+    margin-right: 8px;
+  }
+  
+  .discount {
+    font-size: 14px;
+    color: #2e7d32;
+  }
+  
+  .rightContent {
+    flex: 0 0 200px;
+    background-color: #e8f5e9;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .dealProvider {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-bottom: 8px;
+  }
+  
+  .dealFeatures {
+    font-size: 12px;
+    color: #2e7d32;
+    margin-bottom: 8px;
+  }
+  
+  .dealFeatures p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .dealPricing {
+    margin-bottom: 8px;
+  }
+  
+  .dealPrice {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e7d32;
+    display: block;
+  }
+  
+  .dealNights {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .viewDealButton {
+    background-color: #2e7d32;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .viewDealButton:hover {
+    background-color: #1b5e20;
+  }
+  
+  .substitute {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 8px 16px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .substituteIcon {
+    background-color: #2e7d32;
+    color: #fff;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  }
+  
+  .arrow {
+    margin-left: auto;
+  }

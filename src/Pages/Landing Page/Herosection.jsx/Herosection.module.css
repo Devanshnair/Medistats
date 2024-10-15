@@ -1,0 +1,147 @@
+.heroSection {
+  background-color: #B0E5F2;
+  padding: 3rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+}
+
+.title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.searchWrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.searchTitleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.searchTitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-left: 0.3rem;
+  text-align: left;
+}
+
+.searchBarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50px;
+  padding: 0rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  position: relative;
+}
+
+.searchIcon {
+  margin-right: 0.5rem;
+}
+
+.searchInput {
+  border: none;
+  font-size: 1rem;
+  color: #333;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+}
+
+.searchInput::placeholder {
+  color: #999;
+}
+.searchInput:focus{
+  outline: none;
+}
+
+.searchButton {
+  background-color: #0071BD;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  right: 5px;
+}
+
+.uploadLink {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-right: 0.5rem;
+}
+
+.uploadNow {
+  display: flex;
+  align-items: center;
+  color: #0071BD;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  z-index: 10;
+
+  &:hover{
+    color: #0363a3;
+    transition: color 0.3s ease;
+  }
+}
+
+
+
+.uploadIcon {
+  margin-right: 0.5rem;
+}
+
+
+/* Add pill bottle illustrations */
+.heroSection::before,
+.heroSection::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+}
+
+.heroSection::before {
+  left: -50px;
+  top: -100px;
+  transform: rotate(-30deg);
+}
+
+.heroSection::after {
+  right: -50px;
+  bottom: -100px;
+  transform: rotate(30deg);
+}

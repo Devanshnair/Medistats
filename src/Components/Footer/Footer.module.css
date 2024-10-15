@@ -1,0 +1,23 @@
+.footer {
+    background-color: #000;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    border-radius: 50px 50px 0px 0px ;
+  }
+  
+  .footerNav {
+    margin-top: 1rem;
+  }
+  
+  .footerNav a {
+    margin: 0 0.5rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all ease 1000ms;
+  }
+  
+  .footerNav a:hover {
+    text-decoration: underline;
+  }
