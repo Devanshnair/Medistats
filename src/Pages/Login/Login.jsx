@@ -1,78 +1,68 @@
-import { useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+// LoginForm.jsx
+import React, { useState } from 'react';
 import styles from './Login.module.css';
+import Link from 'react-router-dom';
 
-export default function Login() {
+export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login attempted with:', { email, password });
+    if (!email || !password) {
+      setError('Please fill in all fields');
+      return;
+    }
+    console.log('Login attempted with:', email, password);
+    setError('');
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.formContainer}>
-        <h2 className={styles.title}>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className={styles.inputGroup}>
-            <label htmlFor="email" className={styles.label}>
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={styles.input}
-              required
-            />
-          </div>
-          <div className={styles.inputGroup}>
-            <label htmlFor="password" className={styles.label}>
-              Password
-            </label>
-            <div className={styles.passwordContainer}>
-              <input
-                type={showPassword ? 'text' : 'password'}
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className={styles.input}
-                required
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className={styles.passwordToggle}
-              >
-                {showPassword ? (
-                  <FaEyeSlash className={styles.icon} />
-                ) : (
-                  <FaEye className={styles.icon} />
-                )}
-              </button>
-            </div>
-          </div>
-          <button type="submit" className={styles.submitButton}>
-            Log In
-          </button>
-        </form>
-        <a href="#" className={styles.forgotPassword}>
-          Forgot password?
-        </a>
-        <div className={styles.signupContainer}>
-          <p className={styles.signupText}>
-            Don't have an account?{' '}
-            <a href="#" className={styles.signupLink}>
-              Sign up
-            </a>
-          </p>
-        </div>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.field}>
+        <label htmlFor="email" className={styles.label}>
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          placeholder="you@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className={styles.input}
+        />
       </div>
-    </div>
+      <div className={styles.field}>
+        <label htmlFor="password" className={styles.label}>
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          placeholder="••••••••"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className={styles.input}
+        />
+      </div>
+      {error && <p className={styles.error}>{error}</p>}
+      <div className={styles.buttonWrapper}>
+        <button type="submit" className={styles.button}>
+          Sign In
+        </button>
+      </div>
+      <div className={styles.linkWrapper}>
+        <Link to="/forgot-password" className={styles.link}>
+          Forgot Password?
+        </Link>
+      </div>
+      <p className={styles.signupText}>
+        Don't have an account?{' '}
+        <Link to="/signup" className={styles.signupLink}>
+          Sign up
+        </Link>
+      </p>
+    </form>
   );
 }
