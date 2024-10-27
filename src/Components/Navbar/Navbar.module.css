@@ -38,6 +38,8 @@
   .navLinks {
     display: flex;
     gap: 2rem;
+    align-items: center;
+    justify-content: center;
   }
 
   .navLink {
@@ -45,10 +47,68 @@
     text-decoration: none;
     font-size: 1rem;
     margin-left: 1rem;
-  }
+    position: relative;
+
+    &:before{
+      content: "";
+      height: 1.5px;
+      width: 100%;
+      background-color: black;
+      position: absolute;
+      bottom: -5px;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: all ease 300ms;
+    }
+   }
   
-  .navLink:hover {
-    text-decoration: underline;
+   .navLink:hover{
+    &:before{
+      content: "";
+      transform: scaleX(1);
+    }
+   }
+
+  .userlogocontainer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .userlogo{
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .userlogo:hover + .logout{
+    opacity: 1;
+  }
+
+  .logout:hover{
+    opacity: 1;
+  }
+
+  .logout{
+    position: absolute;
+    bottom: -40px;
+    right: 0px;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    transition: all ease 500ms;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
   }
   
   .aboutButton {

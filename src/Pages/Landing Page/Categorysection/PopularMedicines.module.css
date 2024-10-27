@@ -1,0 +1,203 @@
+.popularMedicines {
+  padding: 4rem 2rem;
+  background-color: var(--light);
+  text-align: center;
+}
+
+.sectionHeading {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--green1);
+}
+
+.sectionDesc {
+  color: var(--gray1);
+  margin-top: 0.6rem;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.sliderContainer {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.medicineSlider {
+  overflow: hidden;
+  margin: 0 -0.5rem;
+  padding: 1rem 0;
+}
+
+.sliderTrack {
+  display: flex;
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+.medicineCard {
+  flex: 0 0 calc(25% - 0.75rem);
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.medicineCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.savingsBadge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: #22c55e;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.medicineImage {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medicineImage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.medicineName {
+  font-size: 1.1rem;
+  color: var(--green1);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all linear 1200ms;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.medicineDesc {
+  color: var(--gray1);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.priceContainer {
+  margin-bottom: 1rem;
+}
+
+.priceInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.mrp {
+  color: var(--gray1);
+  text-decoration: line-through;
+  font-size: 0.85rem;
+}
+
+.bestPrice {
+  color: var(--blue2);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.seller {
+  color: var(--gray1);
+  font-size: 0.85rem;
+}
+
+.compareButton {
+  width: 100%;
+  padding: 0.6rem;
+  background-color: var(--blue2);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.compareButton:hover {
+  background-color: #2563eb;
+}
+
+.sliderButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid var(--gray2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.sliderButton:hover:not(.disabled) {
+  background-color: var(--pri);
+  color: white;
+}
+
+.sliderButton.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.prevButton {
+  left: -20px;
+}
+
+.nextButton {
+  right: -20px;
+}
+
+@media (max-width: 1200px) {
+  .medicineCard {
+    flex: 0 0 calc(33.33% - 0.67rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .medicineCard {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .medicineCard {
+    flex: 0 0 100%;
+  }
+  
+  .sliderButton {
+    display: none;
+  }
+}

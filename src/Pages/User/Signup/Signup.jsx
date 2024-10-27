@@ -1,22 +1,23 @@
 import { useState } from 'react';
 import styles from './Signup.module.css';
 import { Link } from 'react-router-dom';
+import { baseURL } from '../../../App';
 
 export default function Signup() {
-  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [password1, setPassword1] = useState('');
+  const [password2, setPassword2] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !email || !password || !confirmPassword) {
+    if (!username || !email || !password1 || !password2) {
       setError('Please fill in all fields');
       return;
     }
-    if (password !== confirmPassword) {
+    if (password1 !== password2) {
       setError('Passwords do not match');
       return;
     }
@@ -24,19 +25,18 @@ export default function Signup() {
     setError('');
 
     try {
-      const response = await fetch('/api/signup', {
+      const response = await fetch(`${baseURL}/api/auth/accounts/signup/`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-type': 'application/json',
         },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ username, email, password1, password2 }),
       });
 
       const data = await response.json();
 
       if (response.ok) {
         console.log('Signup successful:', data);
-        // Handle successful signup (e.g., store token, redirect)
       } else {
         setError(data.message || 'Signup failed');
       }
@@ -59,9 +59,9 @@ export default function Signup() {
             <input
               type="text"
               id="name"
-              placeholder="John Doe"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              placeholder=""
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               className={styles.input}
             />
           </div>
@@ -85,22 +85,22 @@ export default function Signup() {
             <input
               type="password"
               id="password"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              placeholder=""
+              value={password1}
+              onChange={(e) => setPassword1(e.target.value)}
               className={styles.input}
             />
           </div>
           <div className={styles.field}>
-            <label htmlFor="confirmPassword" className={styles.label}>
+            <label htmlFor="password2" className={styles.label}>
               Confirm Password
             </label>
             <input
               type="password"
-              id="confirmPassword"
-              placeholder="••••••••"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              id="password2"
+              placeholder=""
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
               className={styles.input}
             />
           </div>

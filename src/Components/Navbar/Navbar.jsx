@@ -2,8 +2,19 @@ import styles from './Navbar.module.css';
 import { PiShoppingCartSimple } from "react-icons/pi"
 import { FiUser } from "react-icons/fi";
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/AuthProvider';
+import { HiMiniUserCircle } from "react-icons/hi2";
+import { IoIosLogOut } from "react-icons/io";
 
 export default function Navbar() {
+
+  const {isLoggedIn, logout} = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logout()
+  }
+
   return (
     <nav className={styles.navbar}>
       <Link to="/" className={styles.logocontainer}>
@@ -16,10 +27,20 @@ export default function Navbar() {
         <Link to="/about" className={styles.navLink}>AboutUs</Link>
       </div>
       <div className={styles.navLinks}>
-        <Link to="/login" className={styles.aboutButton}>
-        <span><FiUser className={styles.cartIcon}/> </span>
-          <p>Login</p>
-        </Link>
+          {isLoggedIn ? 
+            <div className={styles.userlogocontainer}>
+              <HiMiniUserCircle size={45} color='#b9cad8' className={styles.userlogo}/>
+              <div className={styles.logout} onClick={() => handleLogout()}>
+                <p>Logout</p>
+                <IoIosLogOut size={20}/>
+              </div>
+            </div>
+           :<>
+           <Link to="/login" className={styles.aboutButton}>
+            <span><FiUser className={styles.cartIcon}/> </span>
+            <p>Login</p>
+           </Link>
+          </>}
         <Link to="/" className={styles.cartButton}>
           <span><PiShoppingCartSimple className={styles.cartIcon}/> </span>
           <p>Cart</p>

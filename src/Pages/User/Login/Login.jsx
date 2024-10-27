@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from './Login.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../Context/AuthProvider';
+import { baseURL } from '../../../App';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const {isLoggedIn, login} = useContext(AuthContext); 
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,7 +23,7 @@ export default function Login() {
     setError('');
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch(`${baseURL}/api/auth/accounts/login/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,7 +35,7 @@ export default function Login() {
 
       if (response.ok) {
         console.log('Login successful:', data);
-        // Handle successful login (e.g., store token, redirect)
+        login(true);
       } else {
         setError(data.message || 'Login failed');
       }
@@ -75,7 +80,8 @@ export default function Login() {
           {error && <p className={styles.error}>{error}</p>}
           <div className={styles.buttonWrapper}>
             <button type="submit" className={styles.button} disabled={isLoading}>
-              {isLoading ? 'Signing In...' : 'Sign In'}
+              {isLoggedIn ? navigate('/home') : isLoading ? 'Logging In...' : 'Login' }
+              
             </button>
           </div>
           <p className={styles.signupText}>
