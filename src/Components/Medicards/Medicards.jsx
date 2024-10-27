@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Medicards.module.css';
 
 const Medicards = ({
@@ -32,8 +33,10 @@ const Medicards = ({
           <div className={styles.imageContainer}>
             <img src={image} alt={name} width={100} height={100} className={styles.image} />
           </div>
-          <div className={styles.details}>
-            <h2 className={styles.name}>{name}</h2>
+          <div className={styles.details}>    
+            <Link to={'/details'} style={{textDecoration: 'none'}}>
+              <h2 className={styles.name}>{name}</h2>
+            </Link>
             <p className={styles.manufacturer}>{manufacturer}</p>
             <p className={styles.packageSize}>{packageSize}</p>
             <div className={styles.pricing}>

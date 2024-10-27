@@ -1,0 +1,159 @@
+.container {
+    display: flex;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 5rem;
+  }
+  
+  .productImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .thumbnail {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .productInfo {
+    flex: 1;
+  }
+  
+  .productName {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .manufacturer {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .packageSelect {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .pricing {
+    margin-bottom: 10px;
+  }
+  
+  .mrp {
+    text-decoration: line-through;
+    color: #666;
+    margin-right: 10px;
+  }
+  
+  .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e7d32;
+    margin-right: 10px;
+  }
+  
+  .discount {
+    color: #2e7d32;
+  }
+  
+  .addToCart {
+    width: 100%;
+    padding: 10px;
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .delivery {
+    background-color: #e3f2fd;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .feature {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .feature img {
+    margin-right: 5px;
+  }
+  
+  .composition, .strength {
+    margin-bottom: 20px;
+  }
+  
+  .strengthOptions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .strengthOption {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .strengthOption.selected {
+    background-color: #e3f2fd;
+    border-color: #1565c0;
+  }
+  
+  .bookingOptions {
+    flex: 0 0 250px;
+  }
+  
+  .bookingOption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .bookingPrice {
+    font-weight: bold;
+  }
+  
+  .bookButton {
+    padding: 5px 10px;
+    background-color: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .productImage, .bookingOptions {
+      flex: 1 1 auto;
+    }
+  }

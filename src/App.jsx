@@ -4,6 +4,8 @@ import Layout from './layout'
 import About from './Pages/AboutUs/AboutUs'
 import LandingPage from './Pages/Landing Page/LandingPage';
 import MedicineLists from './Pages/MedicineLists/MedicineLists';
+import MedicineDetails from './Pages/MedicineDetails/Medicinedetails';
+import Login from './Pages/Login/Login';
 
 function App() {
   const router = createBrowserRouter(
@@ -12,11 +14,11 @@ function App() {
       <Route path="/" element={<Layout />} >
       <Route index element={<LandingPage />} />
       <Route path='home' element={<LandingPage />} />
-      <Route path='explore' element={<MedicineLists />} >
-        {/* <Route path={'details'} element={<MedicineDetils />} */}
-      </Route>
+      <Route path='explore' element={<MedicineLists />} />
+      <Route path='details' element={<MedicineDetails />} />
       <Route path="about" element={<About />} />
       <Route path="*" element={<div>Not Found</div>} />,
+      <Route path='/login' element={<Login />} />
     </Route>
       </>
     ),

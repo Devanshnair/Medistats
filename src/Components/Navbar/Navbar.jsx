@@ -6,14 +6,17 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
-      <Link to="/" className={styles.logo}>MediStats</Link>
+      <Link to="/" className={styles.logocontainer}>
+        <div className={styles.logobox}><img src='/src/assets/Titleicon.png' alt='logo' className={styles.logo}/></div>
+        <p className='styles.logotext'>MediStats</p>
+      </Link>
       <div className={styles.navLinks}>
         <Link to="/" className={styles.navLink}>Home</Link>
         <Link to="/explore" className={styles.navLink}>Explore</Link>
         <Link to="/about" className={styles.navLink}>AboutUs</Link>
       </div>
       <div className={styles.navLinks}>
-        <Link to="/" className={styles.aboutButton}>
+        <Link to="/login" className={styles.aboutButton}>
         <span><FiUser className={styles.cartIcon}/> </span>
           <p>Login</p>
         </Link>

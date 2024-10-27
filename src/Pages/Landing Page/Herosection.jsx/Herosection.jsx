@@ -31,7 +31,7 @@ const Herosection = () => {
               <BiSearchAlt size={30} color='#999999' className={styles.searchIcon}/>
               <input
                 type="text"
-                placeholder="Search for Health Drinks"
+                placeholder="Search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 className={styles.searchInput}
