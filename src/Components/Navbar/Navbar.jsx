@@ -7,8 +7,8 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <Link to="/" className={styles.logocontainer}>
-        <div className={styles.logobox}><img src='/src/assets/Titleicon.png' alt='logo' className={styles.logo}/></div>
-        <p className='styles.logotext'>MediStats</p>
+        <div className={styles.logoimgbox}><img src='/src/assets/Titleicon.png' alt='logo' className={styles.logoimg}/></div>
+        <p className={styles.logotext}>MediStats</p>
       </Link>
       <div className={styles.navLinks}>
         <Link to="/" className={styles.navLink}>Home</Link>

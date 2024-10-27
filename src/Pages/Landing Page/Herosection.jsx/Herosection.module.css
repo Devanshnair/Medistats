@@ -1,5 +1,17 @@
+:root{
+  --pri : #1f7a8c;
+  --sec: #bfdbf7;
+  --light: #F5F5f5;
+  --dark: black;
+  --green1: #022b3a;
+  --green2: #6fabc2;
+  --blue1: #053c5e;
+  --blue2: 
+
+}
+
 .heroSection {
-  background-color: #B0E5F2;
+  background-color: var(--sec);
   padding: 3rem 1rem;
   text-align: center;
   position: relative;
@@ -79,7 +91,7 @@
 }
 
 .searchButton {
-  background-color: #0071BD;
+  background-color: #1b75bc;
   color: white;
   border: none;
   padding: 0.5rem 1.5rem;

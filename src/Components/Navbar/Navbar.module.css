@@ -2,29 +2,35 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     background-color: #f8f8f8;
     border-bottom: 1px solid #e0e0e0;
+    height: 5rem;
   }
 
   .logocontainer{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4px;
+    gap: 1rem;
+    text-decoration: none;
+    color: black;
   }
 
- .logobox{
-
+ .logoimgbox{
+    height: 2rem;
+    width: 2rem;
   }
 
-  .logo{
-    
+  .logoimg{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
   
   .logotext {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight:700;
     color: black;
     text-decoration: none;
   }
