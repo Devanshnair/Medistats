@@ -6,15 +6,13 @@ import styles from './AboutUs.module.css'
 import { Phone, MapPin, Mail } from 'lucide-react'
 
 export default function AboutUs() {
-  const [isHovered, setIsHovered] = useState(false)
-
   return (
     <div className={styles.container}>
       <motion.header
         className={styles.header}
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <h1>About MediStats</h1>
         <p>Your Medicine Price Comparison Tool</p>
@@ -22,70 +20,106 @@ export default function AboutUs() {
 
       <main className={styles.main}>
         <motion.section
-          className={styles.about}
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          className={styles.hero}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className={styles.aboutContent}>
-            <h2>About 10.8</h2>
-            <p>MediStats is your go-to platform for comparing medicine prices across popular online pharmacies. We aggregate data from NetMeds, PharmEasy, and 1mg to provide you with the most comprehensive and up-to-date price comparisons.</p>
+          <div className={styles.welcome}>
+            <h2>Welcome to Medistats</h2>
+            <p>Your trusted resource for comparing and finding the best deals on medicines and healthcare products. We understand the importance of accessible, affordable healthcare.</p>
           </div>
           <motion.div
-            className={styles.aboutImage}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className={styles.heroImage}
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
           >
-            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-10-27%20214125-qlp6077vrTR1UmHm6Ec6c3scuQDhyK.png" alt="About MediStats" />
+            <img src="https://www.booking-wp-plugin.com/wp-content/uploads/2020/02/how-pharmacists-and-their-clients-can-benefit-from-online-booking.jpg" alt="MediStats Platform" />
           </motion.div>
         </motion.section>
 
         <motion.section
-          className={styles.features}
-          initial={{ opacity: 0, y: 50 }}
+          className={styles.infoCards}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h2>Sharing is Caring</h2>
+          <div className={styles.card}>
+            <h3>Who We Are</h3>
+            <p>We are a team of healthcare and technology enthusiasts dedicated to providing a seamless, transparent experience for people searching for essential medications.</p>
+          </div>
+          <div className={styles.card}>
+            <h3>Our Goal</h3>
+            <p>To empower you to make informed decisions about your health and budget. Finding affordable options shouldn't be overwhelming.</p>
+          </div>
+        </motion.section>
+
+        <motion.section
+          className={styles.features}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <h2>What We Offer</h2>
           <div className={styles.featureGrid}>
-            <div className={styles.featureItem}>
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-10-27%20214125-qlp6077vrTR1UmHm6Ec6c3scuQDhyK.png" alt="Feature 1" />
+            <motion.div 
+              className={styles.featureItem}
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className={styles.featureIcon}>
+                <img src="https://img.freepik.com/premium-vector/real-time-data-concept-flat-icon-style-illustration_357500-1564.jpg?semt=ais_hybrid" alt="Real-time Comparisons" />
+              </div>
               <h3>Real-time Comparisons</h3>
               <p>Get up-to-date price comparisons from leading online pharmacies.</p>
-            </div>
-            <div className={styles.featureItem}>
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-10-27%20214125-qlp6077vrTR1UmHm6Ec6c3scuQDhyK.png" alt="Feature 2" />
+            </motion.div>
+            <motion.div 
+              className={styles.featureItem}
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className={styles.featureIcon}>
+                <img src="https://img.freepik.com/free-vector/music-player-app-user-friendly-interface_23-2148541594.jpg?semt=ais_hybrid" alt="User-friendly Interface" />
+              </div>
               <h3>User-friendly Interface</h3>
               <p>Easy-to-use platform for quick medicine searches and comparisons.</p>
-            </div>
-            <div className={styles.featureItem}>
-              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202024-10-27%20214125-qlp6077vrTR1UmHm6Ec6c3scuQDhyK.png" alt="Feature 3" />
+            </motion.div>
+            <motion.div 
+              className={styles.featureItem}
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.2 }}
+            >
+              <div className={styles.featureIcon}>
+                <img src="https://img.freepik.com/free-vector/characters-global-communication-concept-illustration_53876-43120.jpg?semt=ais_hybrid" alt="Direct Redirection" />
+              </div>
               <h3>Direct Redirection</h3>
               <p>Get redirected to the website with the lowest price for your medication.</p>
-            </div>
+            </motion.div>
           </div>
         </motion.section>
 
         <motion.section
           className={styles.contact}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <h2>Contact Us</h2>
-          <p>Let us know how we can help</p>
-          <div className={styles.contactInfo}>
-            <div className={styles.contactItem}>
-              <Phone size={24} />
-              <span>02 574 9497</span>
-            </div>
-            <div className={styles.contactItem}>
-              <MapPin size={24} />
-              <span>123 MediStats Street, Health City 54321</span>
-            </div>
-            <div className={styles.contactItem}>
-              <Mail size={24} />
-              <span>info@medistats.com</span>
+          <div className={styles.contactContent}>
+            <h2>Contact Us</h2>
+            <p>Let us know how we can help</p>
+            <div className={styles.contactInfo}>
+              <div className={styles.contactItem}>
+                <Phone size={24} />
+                <span>02 574 9497</span>
+              </div>
+              <div className={styles.contactItem}>
+                <MapPin size={24} />
+                <span>123 MediStats Street, Health City 54321</span>
+              </div>
+              <div className={styles.contactItem}>
+                <Mail size={24} />
+                <span>medistats38@gmail.com</span>
+              </div>
             </div>
           </div>
         </motion.section>
@@ -93,11 +127,11 @@ export default function AboutUs() {
 
       <motion.footer
         className={styles.footer}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.8 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.6 }}
       >
-        <p>&copy; 2023 MediStats. All rights reserved.</p>
+        <p>&copy; 2024 MediStats. All rights reserved.</p>
       </motion.footer>
     </div>
   )
