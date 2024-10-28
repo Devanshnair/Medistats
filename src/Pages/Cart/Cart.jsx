@@ -121,7 +121,7 @@ const MedicineCart = () => {
                     <div className={styles.bestDealBox}>
                       <p className={styles.bestDealLabel}>Best Deal</p>
                       <p className={styles.bestDealPrice}>
-                        ${(bestDeal.price * item.quantity).toFixed(2)}
+                      ₹{(bestDeal.price * item.quantity).toFixed(2)}
                       </p>
                       <p className={styles.bestDealVendor}>{bestDeal.vendor}</p>
                     </div>
@@ -134,7 +134,7 @@ const MedicineCart = () => {
                         onClick={() => window.location.href = deal.link}
                         className={styles.vendorButton}
                       >
-                        {deal.vendor} - ${(deal.price * item.quantity).toFixed(2)}
+                        {deal.vendor} - ₹{(deal.price * item.quantity).toFixed(2)}
                         <ExternalLink className={styles.externalLinkIcon} />
                       </button>
                     ))}
@@ -161,7 +161,7 @@ const MedicineCart = () => {
                     {index === 0 && ' (Best Value)'}
                   </span>
                   <span className={index === 0 ? styles.bestValue : styles.regularValue}>
-                    ${deal.totalPrice.toFixed(2)}
+                  ₹{deal.totalPrice.toFixed(2)}
                   </span>
                 </div>
               ))}
@@ -171,16 +171,16 @@ const MedicineCart = () => {
           <div className={styles.paymentSection}>
             <h2 className={styles.paymentTitle}>Payment</h2>
             <p className={styles.subtotal}>
-              Subtotal: ${calculateSubtotal().toFixed(2)}
+              Subtotal: ₹{calculateSubtotal().toFixed(2)}
             </p>
             <button className={styles.paymentButton}>
               Proceed to Payment
             </button>
-            <div className={styles.paymentMethods}>
+            {/* <div className={styles.paymentMethods}>
               <img src="/api/placeholder/40/25" alt="Visa" className={styles.paymentIcon} />
               <img src="/api/placeholder/40/25" alt="Mastercard" className={styles.paymentIcon} />
               <img src="/api/placeholder/40/25" alt="PayPal" className={styles.paymentIcon} />
-            </div>
+            </div> */}
           </div>
         </>
       ) : (
