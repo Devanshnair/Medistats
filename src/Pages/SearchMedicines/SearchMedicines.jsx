@@ -120,14 +120,14 @@ const staticData = [
   {
     website: "PharmEasy",
     medicine_name: "Dolo Paracetamol 650mg Strip Of 15 Tablets",
-    price: "25.66",
+    price: "28.02",
     first_link_url: "https://pharmeasy.in/online-medicine-order/dolo-650mg-strip-of-15-tablets-44140",
     image: "/src/assets/dolo.png",
   },
   {
     website: "1mg",
     medicine_name: "Dolo 650 Tablet",
-    price: "25.24",
+    price: "35.24",
     first_link_url: "https://www.1mg.com/drugs/dolo-650-tablet-74467",
     image: "/src/assets/dolo.png",
   },

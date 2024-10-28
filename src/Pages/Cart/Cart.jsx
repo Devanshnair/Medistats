@@ -7,13 +7,13 @@ const MedicineCart = () => {
     {
       id: 1,
       name: "Dolo 650mg",
-      quantity: 2,
+      quantity: 1,
       image: "/src/assets/dolo.png",
-      unitPrice: 5.99,
+      unitPrice: 28.02,
       deals: [
-        { vendor: "1mg", price: 5.99, link: "/1mg" },
-        { vendor: "Netmeds", price: 6.49, link: "/Netmeds" },
-        { vendor: "Pharmeasy", price: 5.49, link: "/pharmeasy" }
+        { vendor: "1mg", price: 33.2, link: "https://www.1mg.com/drugs/dolo-650-tablet-74467" },
+        { vendor: "Netmeds", price: 30.3, link: "https://www.netmeds.com/prescriptions/dolo-650mg-tablet-15-s" },
+        { vendor: "Pharmeasy", price: 28.02, link: "https://pharmeasy.in/online-medicine-order/dolo-650mg-strip-of-15-tablets-44140" }
       ]
     },
     // {
@@ -121,7 +121,7 @@ const MedicineCart = () => {
                     <div className={styles.bestDealBox}>
                       <p className={styles.bestDealLabel}>Best Deal</p>
                       <p className={styles.bestDealPrice}>
-                        ${(bestDeal.price * item.quantity).toFixed(2)}
+                        ₹{(bestDeal.price * item.quantity).toFixed(2)}
                       </p>
                       <p className={styles.bestDealVendor}>{bestDeal.vendor}</p>
                     </div>
@@ -168,7 +168,7 @@ const MedicineCart = () => {
             </div>
           </div>
 
-          <div className={styles.paymentSection}>
+          {/* <div className={styles.paymentSection}>
             <h2 className={styles.paymentTitle}>Payment</h2>
             <p className={styles.subtotal}>
               Subtotal: ${calculateSubtotal().toFixed(2)}
@@ -181,7 +181,7 @@ const MedicineCart = () => {
               <img src="/api/placeholder/40/25" alt="Mastercard" className={styles.paymentIcon} />
               <img src="/api/placeholder/40/25" alt="PayPal" className={styles.paymentIcon} />
             </div>
-          </div>
+          </div> */}
         </>
       ) : (
         <div className={styles.emptyCart}>

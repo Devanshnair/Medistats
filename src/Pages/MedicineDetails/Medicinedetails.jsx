@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import styles from './Medicinedetails.module.css';
+import { Link } from 'react-router-dom';
 
 const bookingOptions = [
-  { name: 'Pharmeasy', price: 37.9, logo: '/src/assets/PharmEasy-logo1.png' },
-  { name: '1mg', price: 32.43, logo: '/src/assets/1mg-logo.png' },
-  { name: 'Netmeds', price: 28.02, logo: '/src/assets/Netmeds-logo.png' },
+  { name: 'Pharmeasy', price: 28.02, logo: '/src/assets/PharmEasy-logo1.png', link: 'https://pharmeasy.in/online-medicine-order/dolo-650mg-strip-of-15-tablets-44140' },
+  { name: '1mg', price: 35.24, logo: '/src/assets/1mg-logo.png', link: "https://www.1mg.com/drugs/dolo-650-tablet-74467" },
+  { name: 'Netmeds', price: 30.38, logo: '/src/assets/Netmeds-logo.png', link: 'https://www.netmeds.com/prescriptions/dolo-650mg-tablet-15-s' },
 ]
 
 const MedicineDetails = () => {
@@ -37,7 +38,7 @@ const MedicineDetails = () => {
           <span className={styles.price}>₹28.02</span>
           <span className={styles.discount}>17% off applied</span>
         </div>
-        <button className={styles.addToCart}>Add To Cart</button>
+        <Link  to={'/cart'}> <button className={styles.addToCart}>Add To Cart</button></Link>
         <p className={styles.delivery}>Get it By 14th Oct</p>
         <div className={styles.features}>
           <div className={styles.feature}>
@@ -84,9 +85,11 @@ const MedicineDetails = () => {
                 <img src={option.logo} alt={option.name} width={80} height={30} className={styles.optionLogo} />
                 <span className={styles.bookingPrice}>₹{option.price.toLocaleString()}</span>
               </div>
-              <button className={styles.bookButton}>
-                Visit Site
-              </button>
+              <Link to={`${option.link}`}>
+                <button className={styles.bookButton}>
+                  Visit Site
+                </button>
+              </Link>
             </div>
           ))}
         </div>
