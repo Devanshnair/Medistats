@@ -1,5 +1,5 @@
 import Medicard from '../../Components/Medicards/Medicards';
-import styles from './MedicineLists.module.css';
+import styles from './ExploreMedicines.module.css';
 
 const medicineData = [
   {
@@ -43,7 +43,7 @@ const medicineData = [
   },
 ];
 
-const MedicineLists = () => {
+const ExploreMedicines = () => {
   return (
     <div className={styles.medicineLists}>
       <h1 className={styles.title}>Showing all results</h1>
@@ -56,4 +56,4 @@ const MedicineLists = () => {
   );
 };
 
-export default MedicineLists
+export default ExploreMedicines
