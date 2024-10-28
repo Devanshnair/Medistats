@@ -9,6 +9,8 @@ import { AuthProvider } from './Context/AuthProvider';
 import LandingPage from './Pages/Landing Page/LandingPage/LandingPage';
 import SearchResults from './Pages/SearchMedicines/SearchMedicines';
 import { PrefetchProvider } from './Context/PrefetchedContext';
+import CartPage from './Pages/Cart/cart';
+import ProfilePage from './Pages/Profile/Profile';
 
 export const baseURL = "https://real-pleasantly-grizzly.ngrok-free.app";
 
@@ -19,9 +21,11 @@ function App() {
       <Route path="/" element={<Layout />} >
       <Route index element={<LandingPage />} />
       <Route path='home' element={<LandingPage />} />
+      <Route path='profile' element={<ProfilePage />} />
       <Route path='explore' element={<MedicineLists />} />
       <Route path='details/:medicinename' element={<MedicineDetails />} />
       <Route path='search/:medicinename' element={<SearchResults />} />
+      <Route path='cart' element={<CartPage />} />
       <Route path="about" element={<About />} />
       <Route path="*" element={<div>Not Found</div>} />,
       <Route path='/login' element={<Login />} />

@@ -124,28 +124,93 @@
     border-color: #1565c0;
   }
   
+  .bookingOptionsContainer {
+    border-radius: 12px;
+    padding: 24px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    width: 23%;
+  }
+  
+  .bookingTitle {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
   .bookingOptions {
-    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
   
   .bookingOption {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+  }
+  
+  .bookingOption:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .optionInfo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .optionLogo {
+    object-fit: contain;
   }
   
   .bookingPrice {
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1f2937;
   }
   
   .bookButton {
-    padding: 5px 10px;
+    padding: 8px 16px;
     background-color: #1565c0;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .bookButton:hover {
+    background-color: #1253a0;
+  }
+  
+  @media (max-width: 640px) {
+    .bookingOption {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  
+    .optionInfo {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .bookButton {
+      width: 100%;
+      padding: 10px 16px;
+      box-sizing: border-box;
+    }
   }
   
   @media (max-width: 768px) {

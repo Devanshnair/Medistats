@@ -1,5 +1,6 @@
 .footer {
-  background-color: #170312;
+  background: linear-gradient(135deg, #283048, #0d324d);
+
   color: white;
   padding: 2.5rem 1.2rem 1.2rem;
   border-radius: 70px 70px 0px 0px;

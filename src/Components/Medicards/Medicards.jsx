@@ -34,7 +34,7 @@ const Medicards = ({
             <img src={image} alt={name} width={100} height={100} className={styles.image} />
           </div>
           <div className={styles.details}>    
-            <Link to={'/details'} style={{textDecoration: 'none'}}>
+            <Link to={`/details/${styles.name}`} style={{textDecoration: 'none'}}>
               <h2 className={styles.name}>{name}</h2>
             </Link>
             <p className={styles.manufacturer}>{manufacturer}</p>

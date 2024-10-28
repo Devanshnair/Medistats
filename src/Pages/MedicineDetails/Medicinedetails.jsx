@@ -2,9 +2,9 @@ import { useState } from 'react';
 import styles from './Medicinedetails.module.css';
 
 const bookingOptions = [
-  { name: 'Pharmeasy', price: 6219, logo: '/src/assets/PharmEasy-logo1.png' },
-  { name: '1mg', price: 6500, logo: '/src/assets/1mg-logo.png' },
-  { name: 'Netmeds', price: 6821, logo: '/src/assets/Netmeds-logo.png' },
+  { name: 'Pharmeasy', price: 37.9, logo: '/src/assets/PharmEasy-logo1.png' },
+  { name: '1mg', price: 32.43, logo: '/src/assets/1mg-logo.png' },
+  { name: 'Netmeds', price: 28.02, logo: '/src/assets/Netmeds-logo.png' },
 ]
 
 const MedicineDetails = () => {
@@ -14,14 +14,12 @@ const MedicineDetails = () => {
   return (
     <div className={styles.container}>
       <div className={styles.productImage}>
-        <img src="/src/assets/dolo.png" alt="Dolo 650 Tablet" width={300} height={300} />
-        {/* <div className={styles.thumbnails}>
-          {[1, 2, 3, 4, 5].map((num) => (
-            <div key={num} className={styles.thumbnail}>
-              <img src="/placeholder.svg?height=50&width=50" alt={`Thumbnail ${num}`} width={50} height={50} />
-            </div>
-          ))}
-        </div> */}
+        <img 
+          src="/src/assets/dolo.png" 
+          alt="Dolo 650 Tablet" 
+          width={300} 
+          height={300}
+        />
       </div>
       <div className={styles.productInfo}>
         <h1 className={styles.productName}>Dolo 650 Tablet 15</h1>
@@ -77,15 +75,21 @@ const MedicineDetails = () => {
           </div>
         </div>
       </div>
-      <div className={styles.bookingOptions}>
-        <h2>Choose where to book</h2>
-        {bookingOptions.map((option) => (
-          <div key={option.name} className={styles.bookingOption}>
-            <img src={option.logo} alt={option.name} width={60} height={20} />
-            <span className={styles.bookingPrice}>₹{option.price.toLocaleString()}</span>
-            <button className={styles.bookButton}>Book</button>
-          </div>
-        ))}
+      <div className={styles.bookingOptionsContainer}>
+        <h2 className={styles.bookingTitle}>Choose where to book</h2>
+        <div className={styles.bookingOptions}>
+          {bookingOptions.map((option) => (
+            <div key={option.name} className={styles.bookingOption}>
+              <div className={styles.optionInfo}>
+                <img src={option.logo} alt={option.name} width={80} height={30} className={styles.optionLogo} />
+                <span className={styles.bookingPrice}>₹{option.price.toLocaleString()}</span>
+              </div>
+              <button className={styles.bookButton}>
+                Visit Site
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

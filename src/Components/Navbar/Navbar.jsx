@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className={styles.navLinks}>
           {isLoggedIn ? 
             <div className={styles.userlogocontainer}>
-              <HiMiniUserCircle size={45} color='#b9cad8' className={styles.userlogo}/>
+              <Link to={'/profile'}><HiMiniUserCircle size={45} color='#b9cad8' className={styles.userlogo}/></Link>
               <div className={styles.logout} onClick={() => handleLogout()}>
                 <p>Logout</p>
                 <IoIosLogOut size={20}/>
@@ -41,7 +41,7 @@ export default function Navbar() {
             <p>Login</p>
            </Link>
           </>}
-        <Link to="/" className={styles.cartButton}>
+        <Link to="/cart" className={styles.cartButton}>
           <span><PiShoppingCartSimple className={styles.cartIcon}/> </span>
           <p>Cart</p>
         </Link>
