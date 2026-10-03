@@ -16,18 +16,18 @@ const MedicineCart = () => {
         { vendor: "Pharmeasy", price: 28.02, link: "https://pharmeasy.in/online-medicine-order/dolo-650mg-strip-of-15-tablets-44140" }
       ]
     },
-    // {
-    //   id: 2,
-    //   name: "Crocin 500mg",
-    //   quantity: 1,
-    //   image: "https://onemg.gumlet.io/9928cf97b5ed4dcfa8544213d887635b.jpg",
-    //   unitPrice: 4.99,
-    //   deals: [
-    //     { vendor: "Netmeds", price: 4.99, link: "/Netmeds" },
-    //     { vendor: "1mg", price: 4.49, link: "/1mg" },
-    //     { vendor: "Pharmeasy", price: 4.99, link: "/pharmeasy" }
-    //   ]
-    // }
+    {
+      id: 2,
+      name: "Crocin 500mg",
+      quantity: 1,
+      image: "https://onemg.gumlet.io/9928cf97b5ed4dcfa8544213d887635b.jpg",
+      unitPrice: 4.99,
+      deals: [
+        { vendor: "Netmeds", price: 4.99, link: "/Netmeds" },
+        { vendor: "1mg", price: 4.49, link: "/1mg" },
+        { vendor: "Pharmeasy", price: 4.99, link: "/pharmeasy" }
+      ]
+    }
   ]);
 
   const getBestDealForItem = (deals) => {
@@ -134,7 +134,7 @@ const MedicineCart = () => {
                         onClick={() => window.location.href = deal.link}
                         className={styles.vendorButton}
                       >
-                        {deal.vendor} - ${(deal.price * item.quantity).toFixed(2)}
+                        {deal.vendor} - ₹{(deal.price * item.quantity).toFixed(2)}
                         <ExternalLink className={styles.externalLinkIcon} />
                       </button>
                     ))}
@@ -161,7 +161,7 @@ const MedicineCart = () => {
                     {index === 0 && ' (Best Value)'}
                   </span>
                   <span className={index === 0 ? styles.bestValue : styles.regularValue}>
-                    ${deal.totalPrice.toFixed(2)}
+                  ₹{deal.totalPrice.toFixed(2)}
                   </span>
                 </div>
               ))}
@@ -171,12 +171,12 @@ const MedicineCart = () => {
           {/* <div className={styles.paymentSection}>
             <h2 className={styles.paymentTitle}>Payment</h2>
             <p className={styles.subtotal}>
-              Subtotal: ${calculateSubtotal().toFixed(2)}
+              Subtotal: ₹{calculateSubtotal().toFixed(2)}
             </p>
             <button className={styles.paymentButton}>
               Proceed to Payment
             </button>
-            <div className={styles.paymentMethods}>
+            {/* <div className={styles.paymentMethods}>
               <img src="/api/placeholder/40/25" alt="Visa" className={styles.paymentIcon} />
               <img src="/api/placeholder/40/25" alt="Mastercard" className={styles.paymentIcon} />
               <img src="/api/placeholder/40/25" alt="PayPal" className={styles.paymentIcon} />
