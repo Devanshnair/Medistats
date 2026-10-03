@@ -1,5 +1,5 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import Layout from './layout'
+import Layout from './Layout'
 import About from './Pages/AboutUs/AboutUs'
 import MedicineLists from './Pages/ExploreMedicines/ExploreMedicines';
 import MedicineDetails from './Pages/MedicineDetails/Medicinedetails';
@@ -9,7 +9,7 @@ import { AuthProvider } from './Context/AuthProvider';
 import LandingPage from './Pages/Landing Page/LandingPage/LandingPage';
 import SearchResults from './Pages/SearchMedicines/SearchMedicines';
 import { PrefetchProvider } from './Context/PrefetchedContext';
-import CartPage from './Pages/Cart/cart';
+import CartPage from './Pages/Cart/Cart';
 import ProfilePage from './Pages/Profile/Profile';
 
 export const baseURL = "https://real-pleasantly-grizzly.ngrok-free.app";

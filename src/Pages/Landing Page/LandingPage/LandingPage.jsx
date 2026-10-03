@@ -2,7 +2,7 @@ import Herosection from '../Herosection.jsx/Herosection'
 import Websitesection from '../Websitessection/Websitesection'
 import FeatureSection from '../Featuresection/Featuresection'
 import Footer from '../../../Components/Footer/Footer'
-import PopularMedicines from '../PopularMedicines/Popularmedicines'
+import PopularMedicines from '../PopularMedicines/PopularMedicines'
 
 const LandingPage = () => {
   return (

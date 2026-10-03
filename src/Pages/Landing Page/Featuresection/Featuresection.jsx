@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import styles from './featuresection.module.css'
+import styles from './Featuresection.module.css'
 
 const FeatureSection = () => {
   const features = [
