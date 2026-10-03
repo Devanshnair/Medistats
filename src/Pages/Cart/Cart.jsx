@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ShoppingCart, ExternalLink, Package, Plus, Minus, Trash2 } from 'lucide-react';
 import styles from './Cart.module.css';
+import doloImg from '../../assets/dolo.png';
 
 const MedicineCart = () => {
   const [cart, setCart] = useState([
@@ -8,7 +9,7 @@ const MedicineCart = () => {
       id: 1,
       name: "Dolo 650mg",
       quantity: 1,
-      image: "/src/assets/dolo.png",
+      image: doloImg,
       unitPrice: 28.02,
       deals: [
         { vendor: "1mg", price: 33.2, link: "https://www.1mg.com/drugs/dolo-650-tablet-74467" },

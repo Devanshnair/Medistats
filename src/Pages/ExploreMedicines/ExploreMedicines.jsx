@@ -1,5 +1,6 @@
 import Medicard from '../../Components/Medicards/Medicards';
 import styles from './ExploreMedicines.module.css';
+import doloImg from '../../assets/dolo.png';
 
 const medicineData = [
   {
@@ -10,7 +11,7 @@ const medicineData = [
     price: 28.02,
     mrp: 33.76,
     discount: 17,
-    image: '/src/assets/dolo.png',
+    image: doloImg,
     isBest: true,
     isCheapest: true,
     substituteDiscount: 44.02,

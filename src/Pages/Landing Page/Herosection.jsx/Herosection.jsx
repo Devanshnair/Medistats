@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { baseURL } from '../../../App'
 import { useNavigate } from 'react-router-dom'
 import { usePrefetch } from '../../../Context/PrefetchedContext'
+import heroLeft from '../../../assets/hero-left.svg'
+import heroRight from '../../../assets/hero-right.svg'
 
 const searchWords = [
   'Dolo',
@@ -71,7 +73,7 @@ const Herosection = () => {
       transition={{ duration: 0.5 }}
     >
       <motion.img 
-        src='https://www.truemeds.in/_next/static/media/HomepageLeftImg.8e1cc839.svg' 
+        src={heroLeft} 
         alt='Left decoration' 
         style={{position:"absolute", left:"0"}}
         initial={{ x: -100, opacity: 0 }}
@@ -79,7 +81,7 @@ const Herosection = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
       />
       <motion.img 
-        src='https://www.truemeds.in/_next/static/media/HomepageRightImg.b7f5edfb.svg' 
+        src={heroRight} 
         alt='Right decoration' 
         style={{position:"absolute", right:"0"}}
         initial={{ x: 100, opacity: 0 }}

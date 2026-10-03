@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion'
 import styles from './Websitesection.module.css'
+import pharmeasyLogo from '../../../assets/PharmEasy-logo1.png'
+import onemgLogo from '../../../assets/1mg-logo.png'
+import netmedsLogo from '../../../assets/Netmeds-logo.png'
 
 const Websitesection = () => {
   const websites = [
-    { name: 'PharmEasy', logo: '/src/assets/PharmEasy-logo1.png' },
-    { name: '1mg', logo: '/src/assets/1mg-logo.png' },
-    { name: 'Netmeds', logo: '/src/assets/Netmeds-logo.png' },
+    { name: 'PharmEasy', logo: pharmeasyLogo },
+    { name: '1mg', logo: onemgLogo },
+    { name: 'Netmeds', logo: netmedsLogo },
   ]
 
   return (

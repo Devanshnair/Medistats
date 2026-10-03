@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Context/AuthProvider';
 import { HiMiniUserCircle } from "react-icons/hi2";
 import { IoIosLogOut } from "react-icons/io";
+import titleIcon from '../../assets/Titleicon.png';
 
 export default function Navbar() {
 
@@ -18,7 +19,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <Link to="/" className={styles.logocontainer}>
-        <div className={styles.logoimgbox}><img src='/src/assets/Titleicon.png' alt='logo' className={styles.logoimg}/></div>
+        <div className={styles.logoimgbox}><img src={titleIcon} alt='logo' className={styles.logoimg}/></div>
         <p className={styles.logotext}>MediStats</p>
       </Link>
       <div className={styles.navLinks}>

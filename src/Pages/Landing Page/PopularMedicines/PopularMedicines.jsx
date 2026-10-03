@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import styles from './PopularMedicines.module.css'
 import { Link } from 'react-router-dom'
+import doloImg from '../../../assets/dolo.png'
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 60 },
@@ -67,7 +68,7 @@ const PopularMedicines = () => {
     {
       name: "Dolo 650mg",
       description: "Paracetamol Tablets",
-      img: "/src/assets/dolo.png",
+      img: doloImg,
       mrp: 30,
       bestPrice: 26.50,
       bestSeller: "NetMeds",
